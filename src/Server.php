@@ -42,10 +42,18 @@ class Server
 
         if (!$header)
         {
+            socket_close($socket);
             throw new \ErrorException('Remote host error: ' . socket_strerror(socket_last_error($socket)));
         }
 
         $header_parts = explode(' ', $header);
+
+        if (count($header_parts) != 3)
+        {
+            socket_close($socket);
+            throw new \ErrorException('Not a Votifier v2 server');
+        }
+
         $challenge = substr($header_parts[2], 0, -1);
 
         $payload_json = json_encode(array(
