@@ -1,0 +1,17 @@
+{
+    "name": "nuvotifier/votifier2-php",
+    "description": "A Votifier protocol 2 implementation for PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tux",
+            "email": "write@imaginarycode.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Imaginarycode\\Votifier2\\": "src/"
+      }
+    }
+}
