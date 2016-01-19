@@ -38,7 +38,7 @@ class Server
         {
             throw new \ErrorException('Could not connect: ' . socket_strerror(socket_last_error($socket)));
         }
-        $header = socket_read($socket, 40, PHP_NORMAL_READ);
+        $header = socket_read($socket, 64, PHP_NORMAL_READ);
 
         if (!$header)
         {
